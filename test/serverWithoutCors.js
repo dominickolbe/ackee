@@ -1,28 +1,28 @@
-'use strict'
+"use strict";
 
-const test = require('ava')
-const listen = require('test-listen')
-const fetch = require('node-fetch')
-const mockedEnv = require('mocked-env')
+const test = require("ava");
+const listen = require("test-listen");
+const fetch = require("node-fetch");
+const mockedEnv = require("mocked-env");
 
-const server = require('../src/server')
+const server = require("../src/server");
 
-const base = listen(server)
+const base = listen(server);
 
-test('return no cors headers if env var specifies none', async (t) => {
-	const url = new URL('/api', await base)
+test("return no cors headers if env var specifies none", async (t) => {
+  const url = new URL("/api", await base);
 
-	const restore = mockedEnv({
-		ACKEE_ALLOW_ORIGIN: undefined,
-	})
+  const restore = mockedEnv({
+    ACKEE_ALLOW_ORIGIN: undefined,
+  });
 
-	const { headers } = await fetch(url.href)
+  const { headers } = await fetch(url.href);
 
-	t.is(headers.get('Access-Control-Allow-Origin'), null)
-	t.is(headers.get('Access-Control-Allow-Methods'), null)
-	t.is(headers.get('Access-Control-Allow-Headers'), null)
-	t.is(headers.get('Access-Control-Allow-Credentials'), null)
-	t.is(headers.get('Access-Control-Max-Age'), null)
+  t.is(headers.get("Access-Control-Allow-Origin"), null);
+  t.is(headers.get("Access-Control-Allow-Methods"), null);
+  t.is(headers.get("Access-Control-Allow-Headers"), null);
+  t.is(headers.get("Access-Control-Allow-Credentials"), null);
+  t.is(headers.get("Access-Control-Max-Age"), null);
 
-	restore()
-})
+  restore();
+});

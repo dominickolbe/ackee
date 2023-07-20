@@ -1,3 +1,3 @@
-'use strict'
+"use strict";
 
-module.exports = (_) => _ != null
+module.exports = (_) => _ != null;

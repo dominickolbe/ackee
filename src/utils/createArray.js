@@ -1,3 +1,3 @@
-'use strict'
+"use strict";
 
-module.exports = (length) => new Array(length).fill()
+module.exports = (length) => new Array(length).fill();

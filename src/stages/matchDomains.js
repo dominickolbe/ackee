@@ -1,15 +1,15 @@
-'use strict'
+"use strict";
 
 module.exports = (ids) => {
-	const stage = {
-		$match: {},
-	}
+  const stage = {
+    $match: {},
+  };
 
-	if (ids != null) {
-		stage.$match.domainId = {
-			$in: ids,
-		}
-	}
+  if (ids != null) {
+    stage.$match.domainId = {
+      $in: ids,
+    };
+  }
 
-	return stage
-}
+  return stage;
+};

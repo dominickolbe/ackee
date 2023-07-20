@@ -1,13 +1,13 @@
-'use strict'
+"use strict";
 
-const test = require('ava')
-const uuid = require('uuid').v4
+const test = require("ava");
+const uuid = require("uuid").v4;
 
-const aggregateActiveVisitors = require('../../src/aggregations/aggregateActiveVisitors')
-const createDate = require('../../src/utils/createDate')
+const aggregateActiveVisitors = require("../../src/aggregations/aggregateActiveVisitors");
+const createDate = require("../../src/utils/createDate");
 
-test('return aggregation', (t) => {
-	const result = aggregateActiveVisitors(uuid(), createDate())
+test("return aggregation", (t) => {
+  const result = aggregateActiveVisitors(uuid(), createDate());
 
-	t.true(Array.isArray(result))
-})
+  t.true(Array.isArray(result));
+});

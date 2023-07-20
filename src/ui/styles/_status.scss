@@ -1,8 +1,6 @@
 .status {
-
-	display: flex;
-	gap: math.div($gutter, 2);
-	justify-content: start;
-	align-items: center;
-
+  display: flex;
+  gap: math.div($gutter, 2);
+  justify-content: start;
+  align-items: center;
 }

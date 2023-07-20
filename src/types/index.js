@@ -1,16 +1,19 @@
-'use strict'
+"use strict";
 
-const { mergeTypeDefs } = require('@graphql-tools/merge')
+const { mergeTypeDefs } = require("@graphql-tools/merge");
 
-module.exports = mergeTypeDefs([
-	require('./tokens'),
-	require('./permanentTokens'),
-	require('./records'),
-	require('./domains'),
-	require('./events'),
-	require('./actions'),
-	require('./facts'),
-	require('./miscellaneous'),
-	require('./domainStatistics'),
-	require('./eventStatistics'),
-], { all: true })
+module.exports = mergeTypeDefs(
+  [
+    require("./tokens"),
+    require("./permanentTokens"),
+    require("./records"),
+    require("./domains"),
+    require("./events"),
+    require("./actions"),
+    require("./facts"),
+    require("./miscellaneous"),
+    require("./domainStatistics"),
+    require("./eventStatistics"),
+  ],
+  { all: true },
+);

@@ -1,7 +1,7 @@
 const authenticationErrors = [
-	'Token invalid',
-	'Token missing',
-	'Username or password incorrect',
-]
+  "Token invalid",
+  "Token missing",
+  "Username or password incorrect",
+];
 
-export default (error) => authenticationErrors.includes(error.message) === true
+export default (error) => authenticationErrors.includes(error.message) === true;

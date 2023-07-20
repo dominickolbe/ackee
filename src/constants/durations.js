@@ -1,11 +1,11 @@
-'use strict'
+"use strict";
 
-const { hour } = require('../utils/times')
+const { hour } = require("../utils/times");
 
-const DURATIONS_INTERVAL = 15000
-const DURATIONS_LIMIT = hour / 2
+const DURATIONS_INTERVAL = 15000;
+const DURATIONS_LIMIT = hour / 2;
 
 module.exports = {
-	DURATIONS_INTERVAL,
-	DURATIONS_LIMIT,
-}
+  DURATIONS_INTERVAL,
+  DURATIONS_LIMIT,
+};

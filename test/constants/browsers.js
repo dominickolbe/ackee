@@ -1,9 +1,9 @@
-'use strict'
+"use strict";
 
-const test = require('ava')
+const test = require("ava");
 
-const browsers = require('../../src/constants/browsers')
+const browsers = require("../../src/constants/browsers");
 
-test('is an object', (t) => {
-	t.is(typeof browsers, 'object')
-})
+test("is an object", (t) => {
+  t.is(typeof browsers, "object");
+});

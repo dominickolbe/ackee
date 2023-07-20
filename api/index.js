@@ -1,6 +1,6 @@
-'use strict'
+"use strict";
 
-const handler = require('../src/serverless').handler
+const handler = require("../src/serverless").handler;
 
 /**
  * A serverless function handler for the '/api' route, for use with Vercel.
@@ -12,9 +12,9 @@ const handler = require('../src/serverless').handler
  *  - https://vercel.com/docs/runtimes#advanced-usage/advanced-node-js-usage/aws-lambda-api
  */
 exports.handler = async (...args) => {
-	const response = await handler(...args)
-	return convertMultiValueHeaders(response)
-}
+  const response = await handler(...args);
+  return convertMultiValueHeaders(response);
+};
 
 /*
  * At the time of writing the Vercel polyfill for the AWS Lambda API doesn't support .multiValueHeaders.
@@ -22,17 +22,19 @@ exports.handler = async (...args) => {
  * Since all the headers we commonly attach have a single value, we can map them to .headers instead.
  */
 const convertMultiValueHeaders = (response) => {
-	if (response?.multiValueHeaders == null) return response
+  if (response?.multiValueHeaders == null) return response;
 
-	response.headers = response.headers ?? {}
+  response.headers = response.headers ?? {};
 
-	for (const [ key, value ] of Object.entries(response.multiValueHeaders)) {
-		if (value.length === 1) {
-			response.headers[key] = value[0]
-		} else {
-			console.warn(`multiValueHeaders is currently unsupported on Vercel. Header ${ key } will be ignored.`)
-		}
-	}
+  for (const [key, value] of Object.entries(response.multiValueHeaders)) {
+    if (value.length === 1) {
+      response.headers[key] = value[0];
+    } else {
+      console.warn(
+        `multiValueHeaders is currently unsupported on Vercel. Header ${key} will be ignored.`
+      );
+    }
+  }
 
-	return response
-}
+  return response;
+};

@@ -1,9 +1,9 @@
-'use strict'
+"use strict";
 
-const test = require('ava')
+const test = require("ava");
 
-const ranges = require('../../src/constants/ranges')
+const ranges = require("../../src/constants/ranges");
 
-test('is an object', (t) => {
-	t.true(typeof ranges === 'object')
-})
+test("is an object", (t) => {
+  t.true(typeof ranges === "object");
+});

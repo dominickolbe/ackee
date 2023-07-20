@@ -1,33 +1,33 @@
-'use strict'
+"use strict";
 
-const { api } = require('../_utils')
+const { api } = require("../_utils");
 
 const getStats = async ({ base, token, domainId, fragment }) => {
-	const body = {
-		query: `
+  const body = {
+    query: `
 			query fetchStatistics($id: ID!) {
 				domain(id: $id) {
 					statistics {
 						id
-						${ fragment }
+						${fragment}
 					}
 				}
 			}
 		`,
-		variables: {
-			id: domainId,
-		},
-	}
+    variables: {
+      id: domainId,
+    },
+  };
 
-	const { json } = await api(base, body, token)
+  const { json } = await api(base, body, token);
 
-	if (json.errors != null) {
-		throw new Error(json.errors[0].message)
-	}
+  if (json.errors != null) {
+    throw new Error(json.errors[0].message);
+  }
 
-	return json.data.domain.statistics
-}
+  return json.data.domain.statistics;
+};
 
 module.exports = {
-	getStats,
-}
+  getStats,
+};

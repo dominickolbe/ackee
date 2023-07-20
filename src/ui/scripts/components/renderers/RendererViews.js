@@ -1,10 +1,11 @@
-import { createElement as h } from 'react'
+import { createElement as h } from "react";
 
-import formatNumber from '../../utils/formatNumber'
+import formatNumber from "../../utils/formatNumber";
 
-import RendererChart from './RendererChart'
+import RendererChart from "./RendererChart";
 
-export default (props) => h(RendererChart, {
-	...props,
-	formatter: formatNumber,
-})
+export default (props) =>
+  h(RendererChart, {
+    ...props,
+    formatter: formatNumber,
+  });

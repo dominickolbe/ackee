@@ -1,12 +1,12 @@
-'use strict'
+"use strict";
 
-const test = require('ava')
-const uuid = require('uuid').v4
+const test = require("ava");
+const uuid = require("uuid").v4;
 
-const aggregateRecentRecords = require('../../src/aggregations/aggregateRecentRecords')
+const aggregateRecentRecords = require("../../src/aggregations/aggregateRecentRecords");
 
-test('return aggregation', (t) => {
-	const result = aggregateRecentRecords(uuid(), [ 'osName', 'osVersion' ])
+test("return aggregation", (t) => {
+  const result = aggregateRecentRecords(uuid(), ["osName", "osVersion"]);
 
-	t.true(Array.isArray(result))
-})
+  t.true(Array.isArray(result));
+});
