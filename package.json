@@ -87,7 +87,7 @@
     "verbose": true,
     "timeout": "20s",
     "environmentVariables": {
-      "ACKEE_TRACKER": "hello"
+      "ACKEE_TRACKER": "custom name"
     }
   },
   "nodemonConfig": {
